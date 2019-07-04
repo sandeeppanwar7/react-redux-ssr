@@ -1,0 +1,9 @@
+.DS_Store
+node_modules
+public/sw.js
+public/dist/*
+build
+npm-debug.log
+/nbproject/
+package-lock.json
+.idea
