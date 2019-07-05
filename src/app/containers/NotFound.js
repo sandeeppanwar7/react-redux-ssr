@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-const NotFound = () => {
+const NotFound = ({message}) => {
   return (
     <Route render={({ staticContext }) => {
       if (staticContext) {
@@ -9,7 +9,7 @@ const NotFound = () => {
       }
       return (
         <div>
-          <h1>404 : Not Found</h1>
+          <h1>{message || "404 : Not Found"}</h1>
         </div>
       )
     }}/>

@@ -16,23 +16,21 @@ const Country = (props) => {
 	}
 	return (
 		<>
-			<Helmet
-				title={country.name}
-				meta={[
-					{property: "description", content: country.capital}
-				]}
-			/>
-		<div className="container">
-			<p><Link to={'/'}>Home</Link></p>
-			<div className="countries-container">
-				<div className="countries-item-data">
-					<h4>{country.name}</h4>
-					<div>{country.capital}</div><br/>
-					<div>{country.population} population.</div><br/>
-					<div>{country.borders.join(', ')}</div><br/>
+			<Helmet>
+				<title>Inside Country{country.name}</title>
+				<meta property="description" content={country.capital} />
+			</Helmet>
+			<div className="container">
+				<p><Link to={'/'}>Home</Link></p>
+				<div className="countries-container">
+					<div className="countries-item-data">
+						<h4>{country.name}</h4>
+						<div>{country.capital}</div><br/>
+						<div>{country.population} population.</div><br/>
+						<div>{country.borders.join(', ')}</div><br/>
+					</div>
 				</div>
 			</div>
-		</div>
 		</>
 	);
 }

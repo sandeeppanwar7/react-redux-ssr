@@ -103,8 +103,7 @@ module.exports = {
             'react-redux',
             'react-router',
             'react-router-dom',
-            'react-helmet-async',
-            'react-intl'
+            'react-helmet'
         ]
     },
     devtool: 'inline-source-map',

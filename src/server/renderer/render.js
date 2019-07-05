@@ -1,6 +1,6 @@
 import React from 'react';
 import Loadable from 'react-loadable';
-import { renderToNodeStream } from 'react-dom/server';
+import { renderToNodeStream, renderToStaticMarkup}  from 'react-dom/server';
 import { getBundles } from 'react-loadable-ssr-addon';
 import { StaticRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -25,15 +25,22 @@ export default (pathname, res, store, context) => {
 
     res.setHeader('content-type', 'text/html; charset=utf-8');
     try{        
+        let tempHtml = renderToStaticMarkup(html);   
+        let header = getHeader();
+        let footer = getFooter(modules, store);
+        res.send(header+tempHtml+footer);
+
+
+        
+/*         var reactDom = renderToNodeStream(html);
         res.write(getHeader());
-        var reactDom = renderToNodeStream(html);
+        let footer = getFooter(modules, store);
         reactDom.pipe(res, { end: false });
         reactDom.on('end', () => {
-            res.end(getFooter(modules, store));
-        });    
+            res.end(footer);
+        }); */
     }catch(ex){
-        console.log("Here i am",ex);
-        res.end(getError(ex));
+        res.end("There is some error, please serve error page");
     }
 };
 

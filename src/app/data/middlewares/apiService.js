@@ -14,7 +14,7 @@ const apiService = ( { } ) => ( next ) => ( action ) => {
                 url = path;
             }
 
-            console.log(url);
+            //console.log(url);
             allCalls.push( fetch( url, method, body ).then(
                 res => handleResponse( res, action, next ),
                 err => handleErrors( err, action, next ))
