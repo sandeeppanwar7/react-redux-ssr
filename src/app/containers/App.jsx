@@ -19,6 +19,9 @@ const App  = (props) => {
 					{name: "theme-color",  content: "#ff0037"},
 				]}
 			/>
+			<div align="center">
+				<img src="/images/logo.png" width="50" />
+			</div>
 			<ErrorBoundary>
 				{renderRoutes(props.route.routes)}
 			</ErrorBoundary>

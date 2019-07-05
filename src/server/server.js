@@ -8,6 +8,7 @@ import { configureStore } from "../app/data/store";
 import Routes from '../routes/routes';
 import render from './renderer/render';
 import { matchRoutes } from 'react-router-config';
+const api = require('./routes/api');
 
 const server = express();
 const PUBLIC_DIR = path.resolve(__dirname, "../../public");
@@ -24,6 +25,10 @@ server.use((req, res, next) => {
 	}
 });
   
+
+server.use('/api', api);
+
+
 server.get('/healthcheck', (req, res) => {
 	res.send('ok')
 });
