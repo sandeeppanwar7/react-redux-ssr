@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "NODE_APP='development' && npm run compile & npm run dev-server",
 		"compile": "webpack --progress --colors --watch",
-		"dev-server": "cross-env NODE_PATH=./src concurrently --kill-others \"node src/server\" ",
+		"dev-server": "cross-env NODE_PATH=./src concurrently --kill-others \"nodemon src/server\" ",
 		"beta": "NODE_APP='beta' webpack --config webpack.config.prod.babel.js --progress --colors",
 		"stg": "NODE_APP='stg' webpack --config webpack.config.prod.babel.js --progress --colors",
 		"prod": "npm run stg & npm run dev-server",

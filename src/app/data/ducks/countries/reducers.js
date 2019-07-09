@@ -1,6 +1,5 @@
 import reducerRegistry from '../../reducerRegistry';
 import types from "./types";
-//import createReducer from "../../utils/createReducer";
 
 function countries(
     state = {
