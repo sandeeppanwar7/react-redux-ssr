@@ -63,7 +63,7 @@ let plugins = [
     //             }
     //         },
     //         {
-    //             urlPattern: new RegExp('/(http|https):\/\/(data|idiva-frontend-api-navik|idiva-frontend-api-cs.idiva.com).(idiva.com)(.*?)/'),
+    //             urlPattern: new RegExp('/(http|https):\/\/(data|(.*?)/'),
     //             handler: 'StaleWhileRevalidate',
     //             options: {
     //                 cacheableResponse: {
